@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RodaLoteria" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="RodaLoteria" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="../../boost_1_81_0" />
+				</Compiler>
+				<Linker>
+					<Add directory="../../boost_1_81_0/stage/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="combinacao.cpp" />
+		<Unit filename="combinacao.h" />
+		<Unit filename="wheelgen.cpp" />
+		<Unit filename="wheelgen.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

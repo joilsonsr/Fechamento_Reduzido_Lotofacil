@@ -1,0 +1,31 @@
+# Project: RodaLoteria
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = wheelgen.o combinacao.o
+LINKOBJ  = wheelgen.o combinacao.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -L"C:/Users/joils/Downloads/tinyfiledialogs/extras_dll_cs_lua_fortran" -L"D:/Programacao/boost_1_81_0" -I../../boost_1_81_0 -L../../boost_1_81_0/stage/lib
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/joils/Downloads/tinyfiledialogs" -I"D:/Programacao/boost_1_81_0/stage/lib"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"D:/Programacao/boost_1_81_0/stage/lib"
+BIN      = RodaLoteria.exe
+CXXFLAGS = $(CXXINCS) -std=c++11 -std=c++11
+CFLAGS   = $(INCS) -std=c++11 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+wheelgen.o: wheelgen.cpp
+	$(CPP) -c wheelgen.cpp -o wheelgen.o $(CXXFLAGS)
+
+combinacao.o: combinacao.cpp
+	$(CPP) -c combinacao.cpp -o combinacao.o $(CXXFLAGS)
